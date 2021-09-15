@@ -1,8 +1,12 @@
 import "./styles.css";
 import { useState } from "react";
+import "./Regex";
+
 export default function App() {
   const [pwd, setPwd] = useState("");
   const [rePwd, setRePwd] = useState("");
+  const validPwd = new RegExp("[0-9]");
+  let matchColor, alphaColor;
 
   function onPwdChange(event) {
     setPwd(event.target.value);
@@ -13,27 +17,42 @@ export default function App() {
   }
 
   function PwdMatch() {
-    let pwdStatus;
-    let color;
+    let pwdStatus, pwdNumCheck;
     if (pwd === "" && rePwd === "") {
       pwdStatus = "";
       return null;
-    } else if (pwd === rePwd) {
-      pwdStatus = "Passwords Match";
-      color = "green";
     } else {
-      pwdStatus = "Passwords don't match";
-      color = "red";
+      pwdStatus = "❌Passwords don't match";
+      matchColor = "red";
+    }
+
+    if (!validPwd.test(pwd)) {
+      pwdNumCheck = "❌Password must include atleast one number";
+      alphaColor = "red";
+    }
+    if (validPwd.test(pwd) && pwd === rePwd) {
+      pwdNumCheck = "Password is valid ✔";
+      alphaColor = "green";
     }
     return (
-      <div
-        style={{
-          visibility: rePwd === "" ? "hidden" : "visible",
-          color: color
-        }}
-        className="pwd-status"
-      >
-        {pwdStatus}
+      <div>
+        <div
+          style={{
+            display: rePwd === "" || pwd === rePwd ? "none" : "block",
+            color: matchColor
+          }}
+        >
+          {pwdStatus}
+        </div>
+
+        <div
+          style={{
+            display: pwd === "" ? "none" : "block",
+            color: alphaColor
+          }}
+        >
+          {pwdNumCheck}
+        </div>
       </div>
     );
   }
