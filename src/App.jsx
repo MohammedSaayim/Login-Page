@@ -1,5 +1,6 @@
 import "./styles.css";
 import { useState } from "react";
+import SubmitBtn from "./SubmitBtn";
 
 export default function App() {
   const [pwd, setPwd] = useState("");
@@ -72,6 +73,7 @@ export default function App() {
             <input onChange={onRePwdChange} type="password"></input>
           </label>
         </div>
+        <SubmitBtn />
         <PwdMatch />
       </div>
     </div>
