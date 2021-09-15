@@ -1,9 +1,17 @@
 import React from "react";
 
-export default function App() {
+export default function App(props) {
+  console.log(props);
   return (
     <div>
-      <button>Submit</button>
+      <button
+        style={{
+          color: props.btnColor,
+          borderColor: props.borderCol
+        }}
+      >
+        Submit
+      </button>
     </div>
   );
 }

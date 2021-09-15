@@ -57,6 +57,24 @@ export default function App() {
     );
   }
 
+  function SubmitBtnColor() {
+    let btnCol;
+    if (validPwd.test(pwd) && pwd === rePwd) {
+      btnCol = "black";
+    } else {
+      btnCol = "gray";
+    }
+    return btnCol;
+  }
+
+  function btnBorderCol() {
+    let borderCol;
+    if (!(validPwd.test(pwd) && pwd === rePwd)) {
+      borderCol = "#fff";
+    }
+    return borderCol;
+  }
+
   return (
     <div className="App">
       <h1 className="app-header">Password Match</h1>
@@ -73,7 +91,7 @@ export default function App() {
             <input onChange={onRePwdChange} type="password"></input>
           </label>
         </div>
-        <SubmitBtn />
+        <SubmitBtn btnColor={SubmitBtnColor()} borderCol={btnBorderCol()} />
         <PwdMatch />
       </div>
     </div>
