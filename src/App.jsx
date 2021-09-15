@@ -1,6 +1,5 @@
 import "./styles.css";
 import { useState } from "react";
-import "./Regex";
 
 export default function App() {
   const [pwd, setPwd] = useState("");
