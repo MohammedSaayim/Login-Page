@@ -98,37 +98,50 @@ export default function PwdForms() {
   return (
     <div>
       <div className="pass-wrapper">
-        <label>
-          Enter password:
-          <input onChange={onPwdChange} type={inputType1}></input>
-          <i
-            onClick={toggleVisibility1}
-            className="fas fa-eye eye1"
-            style={{ display: inputType1 === "text" ? "initial" : "none" }}
-          ></i>
-          <i
-            className="fas fa-eye-slash eye1"
-            onClick={toggleVisibility1}
-            style={{ display: inputType1 === "password" ? "initial" : "none" }}
-          ></i>
-        </label>
-      </div>
+        <div>
+          <label>
+            Enter username:
+            <input type="text"></input>
+          </label>
+        </div>
 
-      <div>
-        <label>
-          Re-enter password:
-          <input onChange={onRePwdChange} type={inputType2}></input>
-          <i
-            onClick={toggleVisibility2}
-            style={{ display: inputType2 === "password" ? "none" : "initial" }}
-            className="fas fa-eye eye2"
-          ></i>
-          <i
-            onClick={toggleVisibility2}
-            style={{ display: inputType2 === "text" ? "none" : "initial" }}
-            className="fas fa-eye-slash eye2"
-          ></i>
-        </label>
+        <div>
+          <label>
+            Enter password:
+            <input onChange={onPwdChange} type={inputType1}></input>
+            <i
+              onClick={toggleVisibility1}
+              className="fas fa-eye eye1"
+              style={{ display: inputType1 === "text" ? "initial" : "none" }}
+            ></i>
+            <i
+              className="fas fa-eye-slash eye1"
+              onClick={toggleVisibility1}
+              style={{
+                display: inputType1 === "password" ? "initial" : "none"
+              }}
+            ></i>
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Re-enter password:
+            <input onChange={onRePwdChange} type={inputType2}></input>
+            <i
+              onClick={toggleVisibility2}
+              style={{
+                display: inputType2 === "password" ? "none" : "initial"
+              }}
+              className="fas fa-eye eye2"
+            ></i>
+            <i
+              onClick={toggleVisibility2}
+              style={{ display: inputType2 === "text" ? "none" : "initial" }}
+              className="fas fa-eye-slash eye2"
+            ></i>
+          </label>
+        </div>
       </div>
 
       <PwdMatch />
