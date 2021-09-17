@@ -9,7 +9,7 @@ export default function App(props) {
           borderColor: props.borderCol
         }}
       >
-        Submit
+        Sign Up
       </button>
     </div>
   );
