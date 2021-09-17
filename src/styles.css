@@ -15,3 +15,25 @@ body {
 /* .pwd-status {
   color: red;
 } */
+
+.pass-wrapper {
+  position: relative;
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.pass-wrapper {
+  position: relative;
+  display: flex;
+  margin-bottom: 14px;
+}
+
+i {
+  position: absolute;
+  top: 38%;
+  right: 16%;
+}
+i:hover {
+  color: #00fcb6;
+  cursor: pointer;
+}

@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import SubmitBtn from "./SubmitBtn";
 
-// npm i --save @fortawesome/fontawesome-svg-core
-// npm i --save @fortawesome/free-solid-svg-icons
-// npm i --save @fortawesome/react-fontawesome
-
 export default function PwdForms() {
   const [pwd, setPwd] = useState("");
   const [rePwd, setRePwd] = useState("");
@@ -50,6 +46,12 @@ export default function PwdForms() {
           }}
         >
           {pwdNumCheck}
+        </div>
+
+        <div className="pass-wrapper">
+          <input placeholder="Password" name="password" type="password" />
+          {/* <i>{eye}</i> */}
+          <i className="fas fa-eye"></i>
         </div>
       </div>
     );
