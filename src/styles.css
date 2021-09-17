@@ -1,7 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
+  /* background-image: url("drakeNo.png"); */
+  background-image: url("drakeNo (2).png");
+  opacity: 1;
+  height: 100%;
+  background-size: cover;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: white;
+  font-weight: bolder;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .app-header {
@@ -15,3 +32,46 @@ body {
 /* .pwd-status {
   color: red;
 } */
+
+.pass-wrapper {
+  position: relative;
+  display: flex;
+  margin-bottom: 14px;
+}
+
+i.eye1 {
+  position: absolute;
+  top: 26.45%;
+  left: 81.15%;
+  color: rgb(44, 44, 44);
+}
+
+i.eye2 {
+  position: absolute;
+  top: 37.225%;
+  left: 72.55%;
+  color: rgb(44, 44, 44);
+}
+
+i:hover {
+  color: #000;
+  cursor: pointer;
+}
+
+input {
+  margin: 7px;
+}
+
+label {
+  color: white;
+  font-weight: bold;
+}
+
+.content {
+  /* position: relative;
+  left: 45%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
