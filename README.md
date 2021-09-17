@@ -3,7 +3,7 @@
 ## Features
 
 - Password Match
-- Allows only alphanumeric pa sswords
+- Allows only alphanumeric passwords
 
 ## Tech-Stack
 
