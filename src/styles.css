@@ -78,3 +78,9 @@ label {
   justify-content: flex-end;
   align-items: center;
 }
+
+.signUpDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
