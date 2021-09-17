@@ -4,9 +4,11 @@ import SubmitBtn from "./SubmitBtn";
 export default function PwdForms() {
   const [pwd, setPwd] = useState("");
   const [rePwd, setRePwd] = useState("");
+  const [inputType1, setInputType1] = useState("password");
+  const [inputType2, setInputType2] = useState("password");
 
   const validPwd = new RegExp("[0-9]");
-  let matchColor, alphaColor;
+  let pwdMatchCol, pwdNumCol;
 
   function PwdMatch() {
     let pwdStatus, pwdNumCheck;
@@ -15,23 +17,23 @@ export default function PwdForms() {
       return null;
     } else {
       pwdStatus = "❌Passwords don't match";
-      matchColor = "red";
+      pwdMatchCol = "red";
     }
 
     if (!validPwd.test(pwd)) {
       pwdNumCheck = "❌Password must include atleast one number";
-      alphaColor = "red";
+      pwdNumCol = "red";
     }
     if (validPwd.test(pwd) && pwd === rePwd) {
       pwdNumCheck = "Password is valid ✔";
-      alphaColor = "green";
+      pwdNumCol = "green";
     }
     return (
       <div>
         <div
           style={{
             display: rePwd === "" || pwd === rePwd ? "none" : "block",
-            color: matchColor
+            color: pwdMatchCol
           }}
         >
           {pwdStatus}
@@ -40,7 +42,7 @@ export default function PwdForms() {
         <div
           style={{
             display: pwd === "" ? "none" : "block",
-            color: alphaColor
+            color: pwdNumCol
           }}
         >
           {pwdNumCheck}
@@ -63,6 +65,8 @@ export default function PwdForms() {
     let borderCol;
     if (!(validPwd.test(pwd) && pwd === rePwd)) {
       borderCol = "#fff";
+    } else {
+      borderCol = "#000";
     }
     return borderCol;
   }
@@ -75,19 +79,55 @@ export default function PwdForms() {
     setRePwd(event.target.value);
   }
 
+  function toggleVisibility1() {
+    if (inputType1 === "password") {
+      setInputType1("text");
+    } else {
+      setInputType1("password");
+    }
+  }
+
+  function toggleVisibility2() {
+    if (inputType2 === "password") {
+      setInputType2("text");
+    } else {
+      setInputType2("password");
+    }
+  }
+
   return (
     <div>
-      <div>
+      <div className="pass-wrapper">
         <label>
           Enter password:
-          <input onChange={onPwdChange} type="password"></input>
+          <input onChange={onPwdChange} type={inputType1}></input>
+          <i
+            onClick={toggleVisibility1}
+            className="fas fa-eye eye1"
+            style={{ display: inputType1 === "text" ? "initial" : "none" }}
+          ></i>
+          <i
+            className="fas fa-eye-slash eye1"
+            onClick={toggleVisibility1}
+            style={{ display: inputType1 === "password" ? "initial" : "none" }}
+          ></i>
         </label>
       </div>
 
       <div>
         <label>
           Re-enter password:
-          <input onChange={onRePwdChange} type="password"></input>
+          <input onChange={onRePwdChange} type={inputType2}></input>
+          <i
+            onClick={toggleVisibility2}
+            style={{ display: inputType2 === "password" ? "none" : "initial" }}
+            className="fas fa-eye eye2"
+          ></i>
+          <i
+            onClick={toggleVisibility2}
+            style={{ display: inputType2 === "text" ? "none" : "initial" }}
+            className="fas fa-eye-slash eye2"
+          ></i>
         </label>
       </div>
 
