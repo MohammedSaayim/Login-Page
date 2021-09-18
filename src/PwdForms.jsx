@@ -108,6 +108,7 @@ export default function PwdForms() {
         <div>
           <label>
             Enter password:
+            <div className="pwd1-div">
             <input onChange={onPwdChange} type={inputType1}></input>
             <i
               onClick={toggleVisibility1}
@@ -121,26 +122,29 @@ export default function PwdForms() {
                 display: inputType1 === "password" ? "initial" : "none"
               }}
             ></i>
+            </div>
           </label>
         </div>
 
         <div>
           <label>
             Re-enter password:
-            <input onChange={onRePwdChange} type={inputType2}></input>
-            <i
-              onClick={toggleVisibility2}
-              style={{
-                display: inputType2 === "password" ? "none" : "initial"
-              }}
-              className="fas fa-eye eye2"
-            ></i>
-            <i
-              onClick={toggleVisibility2}
-              style={{ display: inputType2 === "text" ? "none" : "initial" }}
-              className="fas fa-eye-slash eye2"
-            ></i>
-          </label>
+            <div className="pwd2-div">
+              <input onChange={onRePwdChange} type={inputType2}></input>
+              <i
+                onClick={toggleVisibility2}
+                style={{
+                  display: inputType2 === "password" ? "none" : "initial"
+                }}
+                className="fas fa-eye eye2"
+              ></i>
+              <i
+                onClick={toggleVisibility2}
+                style={{ display: inputType2 === "text" ? "none" : "initial" }}
+                className="fas fa-eye-slash eye2"
+              ></i>
+            </div>
+            </label>
         </div>
       </div>
 
