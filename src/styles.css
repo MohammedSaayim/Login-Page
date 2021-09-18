@@ -88,10 +88,6 @@ label {
   align-items: center;
 }
 
-.App {
-  text-align: center;
-}
-
 .App-header {
   display: flex;
   flex-direction: column;
