@@ -5,9 +5,11 @@ export default function App() {
   return (
     <div className="App">
       <div className="content">
-        <h1 className="app-header">Sign Me Up!</h1>
+        <header className="App-header">
+          <h1 className="app-header">Sign Me Up!</h1>
+        </header>
         <div className="app-body">
-          <PwdForms />
+            <PwdForms />
         </div>
       </div>
     </div>
